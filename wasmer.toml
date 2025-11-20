@@ -16,4 +16,4 @@ module = "wasmer/node:node"
 runner = "https://webc.org/runner/wasi"
 annotations = { "wasi.env" = ["PORT=8080"] }
 # Command arguments to start the server
-args = ["server.js"]
+args = ["/app/server.js"]
