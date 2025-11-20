@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Sonnies Technology LLC - Corporate Website"
 
 [dependencies]
-"wasmer/node" = "^1"
+"wasmer/node" = "^2"
 
 [fs]
 "/public" = "public" # Maps the public folder if we organize it that way, but for flat structure:
