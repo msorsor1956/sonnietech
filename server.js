@@ -1,5 +1,5 @@
 ﻿const express = require('express');
-const nodemailer = require('nodemailer');
+var { SendMailClient } = require("zeptomail");
 const bodyParser = require('body-parser');
 const path = require('path');
 
@@ -10,30 +10,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const transporter = nodemailer.createTransport({
-    host: "smtp.zeptomail.com",
-    port: 587,
-    auth: {
-        user: "emailapikey",
-        pass: process.env.ZEPTO_PASSWORD 
-    }
-});
+const url = "https://api.zeptomail.com/v1.1/email";
+const token = process.env.ZEPTO_TOKEN; 
+
+let client = new SendMailClient({url, token});
 
 app.post('/api/send-email', async (req, res) => {
     const { name, email, subject, message } = req.body;
-    const mailOptions = {
-        from: '"Sonnies Tech Team" <noreply@sonnietech.com>',
-        to: 'techsolutions@sonnietech.com',
-        replyTo: email, 
-        subject: "New Website Inquiry: " + subject,
-        text: "Name: " + name + "
-Email: " + email + "
-Message:
-" + message
+
+    const emailData = {
+        "from": { "address": "noreply@sonnietech.com", "name": "Sonnies Tech Team" },
+        "to": [{ "email_address": { "address": "techsolutions@sonnietech.com", "name": "SONNIE TECHNOLOGY LLC" } }],
+        "reply_to": [{ "address": email, "name": name }],
+        "subject": "New Inquiry: " + subject,
+        "htmlbody": "<div><h3>New Message</h3><p><strong>Name:</strong> " + name + "</p><p><strong>Email:</strong> " + email + "</p><p><strong>Message:</strong><br>" + message + "</p></div>"
     };
 
     try {
-        await transporter.sendMail(mailOptions);
+        await client.sendMail(emailData);
         res.status(200).json({ success: true, message: 'Email sent successfully!' });
     } catch (error) {
         console.error('Error sending email:', error);
