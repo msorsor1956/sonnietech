@@ -53,3 +53,4 @@ app.post('/api/send-email', async (req, res) => {
 app.listen(PORT, () => {
     console.log('Server is running on port ' + PORT);
 });
+// ZeptoMail Update: 11/20/2025 21:50:11
