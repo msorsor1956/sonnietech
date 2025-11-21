@@ -7,7 +7,7 @@ description = "Sonnies Technology LLC - Corporate Website"
 "wasmer/static-web-server" = "^1"
 
 [fs]
-"/public" = "public"
+"/public" = "."
 
 [[command]]
 name = "start"
