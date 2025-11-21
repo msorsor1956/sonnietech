@@ -57,28 +57,37 @@
     <!-- Header -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
             <a href="#" class="nav-link focus:outline-none" data-page="home">
                 <img src="https://i.imghippo.com/files/r8984tKw.png" alt="Sonnies Technology LLC Logo" class="h-12 w-auto" onerror="this.alt='Sonnies Technology LLC';">
             </a>
+
+            <!-- Desktop Navigation -->
             <div class="hidden md:flex space-x-6">
                 <a href="#" class="nav-link text-gray-700 hover:text-brand-green active" data-page="home">Home</a>
                 <a href="#" class="nav-link text-gray-700 hover:text-brand-green" data-page="about">About Us</a>
                 <a href="#" class="nav-link text-gray-700 hover:text-brand-green" data-page="services">Services</a>
-                <a href="#" class="nav-link text-gray-700 hover:text-brand-green" data-page="investors">Investors</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-brand-green" data-page="jobs">Jobs</a>
                 <a href="#" class="nav-link text-gray-700 hover:text-brand-green" data-page="contact">Contact Us</a>
             </div>
+            
+            <!-- CTA Button -->
             <a href="#" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-5 rounded-lg hover:bg-opacity-90 transition-colors nav-link" data-page="contact">Get a Quote</a>
+
+            <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-700 focus:outline-none" aria-label="Toggle Navigation Menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
         </nav>
+
+        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-2 bg-white border-t">
             <a href="#" class="nav-link block text-gray-700 hover:text-brand-green active" data-page="home">Home</a>
             <a href="#" class="nav-link block text-gray-700 hover:text-brand-green" data-page="about">About Us</a>
             <a href="#" class="nav-link block text-gray-700 hover:text-brand-green" data-page="services">Services</a>
-            <a href="#" class="nav-link block text-gray-700 hover:text-brand-green" data-page="investors">Investors</a>
+            <a href="#" class="nav-link block text-gray-700 hover:text-brand-green" data-page="jobs">Jobs</a>
             <a href="#" class="nav-link block text-gray-700 hover:text-brand-green" data-page="contact">Contact Us</a>
         </div>
     </header>
@@ -94,23 +103,27 @@
                     <a href="#" class="nav-link bg-brand-gold text-brand-dark font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-colors" data-page="services">Explore Our Services</a>
                 </div>
             </div>
+
             <!-- Services Overview -->
             <div class="py-20 bg-gray-50">
                 <div class="container mx-auto px-6 text-center">
                     <h2 class="text-3xl md:text-4xl font-bold mb-12">Comprehensive Tech & Logistics Solutions</h2>
                     <div class="grid md:grid-cols-3 gap-10">
+                        <!-- IT Repair -->
                         <div class="bg-white p-8 rounded-lg shadow-lg">
                             <svg class="w-16 h-16 text-brand-green mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             <h3 class="text-2xl font-bold mb-3">IT Repair Services</h3>
                             <p class="mb-4">Expert PC, Mac, and network troubleshooting for your home and business. Fast, reliable, and local.</p>
                             <a href="#" class="nav-link font-bold text-brand-green hover:text-brand-gold" data-page="services">Learn More &rarr;</a>
                         </div>
+                        <!-- Electronics -->
                         <div class="bg-white p-8 rounded-lg shadow-lg">
                             <svg class="w-16 h-16 text-brand-green mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H7a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
                             <h3 class="text-2xl font-bold mb-3">Electronics Sales</h3>
                             <p class="mb-4">Retail and wholesale of new and refurbished electronics, gadgets, and essential accessories.</p>
                             <a href="#" class="nav-link font-bold text-brand-green hover:text-brand-gold" data-page="services">Learn More &rarr;</a>
                         </div>
+                        <!-- Medical -->
                         <div class="bg-white p-8 rounded-lg shadow-lg">
                             <svg class="w-16 h-16 text-brand-green mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10h10m-3-10l5 4v8h5l-5-4V6zM13 16h2m-2-7h2"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 11h6m-3-3v6"></path></svg>
                             <h3 class="text-2xl font-bold mb-3">Medical Equipment Delivery</h3>
@@ -120,6 +133,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Why Choose Us -->
             <div class="py-20">
                 <div class="container mx-auto px-6">
@@ -129,9 +143,9 @@
                             <h2 class="text-3xl md:text-4xl font-bold mb-6 mt-2">Your Trusted Partner in Technology and Logistics</h2>
                             <p class="text-lg text-gray-700 mb-4">Founded in 2021, Sonnies Technology LLC is built on a foundation of trust, expertise, and a commitment to our community in Indianapolis and across the Midwest.</p>
                             <ul class="space-y-3 text-lg">
-                                <li class="flex items-center"><svg class="w-6 h-6 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><strong>Professional & Reliable</strong></li>
-                                <li class="flex items-center"><svg class="w-6 h-6 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><strong>Investor-Credible</strong></li>
-                                <li class="flex items-center"><svg class="w-6 h-6 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><strong>Community-Focused</strong></li>
+                                <li class="flex items-center"><svg class="w-6 h-6 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><strong>Professional & Reliable</strong></li>
+                                <li class="flex items-center"><svg class="w-6 h-6 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><strong>Investor-Credible</strong></li>
+                                <li class="flex items-center"><svg class="w-6 h-6 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><strong>Community-Focused</strong></li>
                             </ul>
                         </div>
                         <div class="rounded-lg shadow-xl overflow-hidden">
@@ -149,6 +163,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold">About Sonnies Technology LLC</h1>
                     <p class="text-xl text-gray-700 mt-4">Your partner in technology and logistics, founded on trust and driven by innovation.</p>
                 </div>
+                <!-- Mission/Vision -->
                 <div class="grid md:grid-cols-2 gap-10 mt-16">
                     <div class="bg-brand-green text-white p-8 rounded-lg shadow-lg">
                         <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
@@ -159,6 +174,7 @@
                         <p class="text-lg">“To be a trusted leader in IT services, electronics, and healthcare delivery technology across the Midwest.”</p>
                     </div>
                 </div>
+                <!-- AI Mission Alignment -->
                 <div class="bg-gray-100 p-8 rounded-lg border border-brand-silver mt-16">
                     <h2 class="text-3xl font-bold mb-4 flex items-center space-x-2 text-brand-green"><span>✨ AI Mission Alignment</span></h2>
                     <p class="text-gray-700 mb-4">Enter your goal, and see how we support you.</p>
@@ -166,7 +182,9 @@
                     <button type="button" id="align-mission-button" class="mt-4 bg-brand-green text-white font-bold py-2 px-6 rounded-lg hover:bg-opacity-90">Analyze My Goal</button>
                     <div id="alignment-response-area" class="mt-4 hidden p-4 bg-white rounded-lg border border-gray-300">
                         <p id="alignment-response-text" class="text-gray-700 text-sm"></p>
-                        <div id="alignment-loading-indicator" class="hidden text-brand-green flex items-center space-x-2"><div class="animate-spin rounded-full h-4 w-4 border-b-2 border-brand-green"></div><span>Analyzing...</span></div>
+                        <div id="alignment-loading-indicator" class="hidden text-brand-green flex items-center space-x-2">
+                            <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-brand-green"></div><span>Analyzing...</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,6 +197,46 @@
                     <h1 class="text-4xl md:text-5xl font-bold">Our Services</h1>
                     <p class="text-xl text-gray-700 mt-4">Specialized solutions to meet your technology and logistics needs.</p>
                 </div>
+
+                <!-- Detailed Services List -->
+                <div class="mt-16 mb-12">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-green shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Installations</h3>
+                            <p class="text-gray-600 text-sm">Professional setup of hardware, networks, and peripherals for homes and businesses.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-gold shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Repair & Diagnostics</h3>
+                            <p class="text-gray-600 text-sm">Comprehensive troubleshooting and repair for computers, servers, and networks.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-green shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Deinstallation</h3>
+                            <p class="text-gray-600 text-sm">Safe removal and decommissioning of devices, including denomination & payment terminals.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-gold shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Website Services</h3>
+                            <p class="text-gray-600 text-sm">Design, development, and maintenance of professional business websites.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-green shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Electronics Repair</h3>
+                            <p class="text-gray-600 text-sm">Expert repair for a wide range of consumer and commercial electronics.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-gold shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Break & Fix</h3>
+                            <p class="text-gray-600 text-sm">On-demand IT support to fix hardware and software issues as they arise.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-green shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">POS Systems</h3>
+                            <p class="text-gray-600 text-sm">Installation, configuration, and support for Point of Sale systems.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-gold shadow-md hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Medical Logistics</h3>
+                            <p class="text-gray-600 text-sm">Secure delivery and setup of sensitive medical equipment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Service Breakdown -->
                 <div class="bg-white p-8 rounded-lg shadow-lg border border-brand-green mt-12">
                     <h2 class="text-3xl font-bold mb-4 flex items-center space-x-2 text-brand-green"><span>💡 AI Service Breakdown</span></h2>
                     <p class="text-gray-700 mb-4">Describe your problem, and we'll find the right solution.</p>
@@ -186,9 +244,12 @@
                     <button type="button" id="breakdown-service-button" class="mt-4 bg-brand-gold text-brand-dark font-bold py-2 px-6 rounded-lg hover:bg-opacity-90">Identify My Service</button>
                     <div id="breakdown-response-area" class="mt-4 hidden p-4 bg-gray-100 rounded-lg border border-gray-300">
                         <p id="breakdown-response-text" class="text-gray-700 text-sm"></p>
-                        <div id="breakdown-loading-indicator" class="hidden text-brand-green flex items-center space-x-2"><div class="animate-spin rounded-full h-4 w-4 border-b-2 border-brand-green"></div><span>Matching solution...</span></div>
+                        <div id="breakdown-loading-indicator" class="hidden text-brand-green flex items-center space-x-2">
+                            <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-brand-green"></div><span>Matching solution...</span>
+                        </div>
                     </div>
                 </div>
+
                 <!-- ZOHO CALENDAR INTEGRATION -->
                 <div class="mt-20 bg-white p-8 rounded-lg shadow-lg border-t-4 border-brand-gold">
                     <div class="text-center mb-8">
@@ -202,14 +263,44 @@
             </div>
         </section>
 
-        <!-- INVESTORS PAGE -->
-        <section id="investors-page" class="page-section py-20">
-            <div class="container mx-auto px-6 max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl font-bold">Investor & Business Profile</h1>
-                <p class="text-xl text-gray-700 mt-4">A professional, bank-ready entity structured for growth.</p>
-                <div class="bg-white p-12 rounded-lg shadow-xl border border-brand-silver mt-12">
-                    <h2 class="text-3xl font-bold mb-6">A Credible Partner for Growth</h2>
-                    <a href="#" class="nav-link bg-brand-green text-white font-bold py-3 px-6 rounded-lg mt-4 inline-block" data-page="contact">Contact Us Directly</a>
+        <!-- JOBS & SUB-CONTRACTORS PAGE -->
+        <section id="jobs-page" class="page-section py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h1 class="text-4xl md:text-5xl font-bold">Job & Sub-Contractor Opportunities</h1>
+                    <p class="text-xl text-gray-700 mt-4">Join our growing team. We are looking for dedicated professionals for logistics and IT services.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <!-- Independent Driver Contract -->
+                    <div class="bg-white p-8 rounded-lg shadow-xl border-t-4 border-brand-gold flex flex-col">
+                        <div class="text-brand-green mb-4 flex justify-center">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10h10m-3-10l5 4v8h5l-5-4V6zM13 16h2m-2-7h2"></path></svg>
+                        </div>
+                        <h2 class="text-3xl font-bold mb-4 text-center">Independent Driver Contract</h2>
+                        <p class="text-gray-600 mb-6 text-center">We are seeking reliable independent contractors for medical equipment delivery. Must have a valid license and a clean driving record.</p>
+                        <ul class="text-left text-gray-700 mb-8 space-y-3 px-4 flex-grow">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Flexible Schedule</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Competitive Contract Rates</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Local Routes in Indianapolis</li>
+                        </ul>
+                        <a href="#" class="nav-link bg-brand-green text-white font-bold py-3 px-6 rounded-lg inline-block w-full text-center hover:bg-opacity-90 transition-colors mt-auto" data-page="contact">Contact Us Directly to Apply</a>
+                    </div>
+
+                    <!-- IT Pro Contract -->
+                    <div class="bg-white p-8 rounded-lg shadow-xl border-t-4 border-brand-green flex flex-col">
+                        <div class="text-brand-gold mb-4 flex justify-center">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h2 class="text-3xl font-bold mb-4 text-center">IT Pro Contract</h2>
+                        <p class="text-gray-600 mb-6 text-center">Experienced IT technicians needed for freelance and contract-based hardware repair, network troubleshooting, and installations.</p>
+                        <ul class="text-left text-gray-700 mb-8 space-y-3 px-4 flex-grow">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-green mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Project-Based Work</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-green mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Hardware & Software Focus</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-green mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Business & Residential Clients</li>
+                        </ul>
+                        <a href="#" class="nav-link bg-brand-gold text-brand-dark font-bold py-3 px-6 rounded-lg inline-block w-full text-center hover:bg-opacity-90 transition-colors mt-auto" data-page="contact">Contact Us Directly to Apply</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -235,24 +326,66 @@
                     <p class="text-xl text-gray-700 mt-4">Get in touch for a quote, service request, or partnership inquiry.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-12 mt-16">
+                    
+                    <!-- ZOHO PARTNERSHIP INQUIRY FORM -->
                     <div class="bg-white p-8 rounded-lg shadow-lg">
                         <h2 class="text-3xl font-bold mb-6">Send Us a Message</h2>
-                        <form id="contact-form"> 
+                        
+                        <!-- Zoho Form Embed -->
+                        <form action='https://forms.zohopublic.com/techsolutionssonni1/form/PartnershipInquiryForm/formperma/5SgxfTmA7xHuhRLpoeoUX604tNcN6fCUI-UO6v_KzEI/htmlRecords/submit' 
+                              name='form' 
+                              method='POST' 
+                              accept-charset='UTF-8' 
+                              enctype='multipart/form-data'>
+                            
+                            <input type="hidden" name="zf_referrer_name" value="">
+                            <input type="hidden" name="zf_redirect_url" value="">
+                            <input type="hidden" name="zc_gad" value="">
+
                             <div class="space-y-4">
-                                <div><label class="block text-sm font-medium text-gray-700">Full Name</label><input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg"></div>
-                                <div><label class="block text-sm font-medium text-gray-700">Email Address</label><input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg"></div>
-                                <div><label class="block text-sm font-medium text-gray-700">Subject</label><input type="text" id="subject" name="subject" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg"></div>
-                                <div><label class="block text-sm font-medium text-gray-700">Message</label><textarea id="message" name="message" rows="5" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg"></textarea></div>
-                                <button type="button" id="refine-inquiry-button" class="w-full bg-brand-gold text-brand-dark font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-2"><span class="text-xl">✨</span> <span>Refine Inquiry</span></button>
-                                <div id="ai-response-area" class="mt-4 hidden p-4 bg-gray-100 rounded-lg border border-gray-300">
-                                    <p id="ai-response-text" class="text-gray-700 text-sm"></p>
-                                    <div id="ai-loading-indicator" class="hidden text-brand-green flex items-center space-x-2"><div class="animate-spin rounded-full h-4 w-4 border-b-2 border-brand-green"></div><span>Analyzing...</span></div>
+                                <!-- Name Fields -->
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">First Name <span class="text-red-500">*</span></label>
+                                        <input type="text" name="Name_First" maxlength="255" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Last Name <span class="text-red-500">*</span></label>
+                                        <input type="text" name="Name_Last" maxlength="255" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green" required>
+                                    </div>
                                 </div>
-                                <button type="submit" class="w-full bg-brand-green text-white font-bold py-3 px-6 rounded-lg">Submit Message</button>
-                                <p id="form-status" class="text-center mt-4 text-sm"></p>
+
+                                <!-- Email Field -->
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Work Email Address <span class="text-red-500">*</span></label>
+                                    <input type="text" name="Email" maxlength="255" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green" required>
+                                </div>
+
+                                <!-- Company Name -->
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Your Company Name</label>
+                                    <input type="text" name="SingleLine" maxlength="255" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green">
+                                </div>
+
+                                <!-- File Upload -->
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">File Upload</label>
+                                    <input type="file" name="FileUpload" class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50">
+                                </div>
+
+                                <!-- Proposal/Message -->
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Briefly Describe Your Proposal <span class="text-red-500">*</span></label>
+                                    <textarea name="MultiLine" rows="5" maxlength="65535" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green" required></textarea>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" class="w-full bg-brand-green text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors">Submit Inquiry</button>
                             </div>
                         </form>
                     </div>
+
+                    <!-- Contact Details -->
                     <div class="space-y-6">
                         <div class="bg-white p-8 rounded-lg shadow-lg">
                             <h2 class="text-3xl font-bold mb-6">Our Information</h2>
@@ -278,6 +411,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Navigation Logic
             const navLinks = document.querySelectorAll('.nav-link');
             const pageSections = document.querySelectorAll('.page-section');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -290,50 +424,20 @@
                 window.scrollTo(0, 0);
                 mobileMenu.classList.add('hidden');
             }
+            
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     if (link.dataset.page) changePage(link.dataset.page);
                 });
             });
+            
             if(mobileMenuButton) {
                 mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
             }
-
-            const contactForm = document.getElementById('contact-form');
-            const formStatus = document.getElementById('form-status');
-            if (contactForm) {
-                contactForm.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    const formData = {
-                        name: document.getElementById('name').value,
-                        email: document.getElementById('email').value,
-                        subject: document.getElementById('subject').value,
-                        message: document.getElementById('message').value
-                    };
-                    formStatus.innerText = "Sending...";
-                    formStatus.className = "text-center mt-4 text-sm text-gray-600";
-                    try {
-                        const response = await fetch('/api/send-email', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(formData)
-                        });
-                        const result = await response.json();
-                        if (result.success) {
-                            formStatus.innerText = "Message sent successfully!";
-                            formStatus.className = "text-center mt-4 text-sm text-green-600 font-bold";
-                            contactForm.reset();
-                        } else {
-                            throw new Error('Server returned error');
-                        }
-                    } catch (error) {
-                        console.error(error);
-                        formStatus.innerText = "Failed to send message. Please try again later.";
-                        formStatus.className = "text-center mt-4 text-sm text-red-600 font-bold";
-                    }
-                });
-            }
+            
+            // Cleaned up JS - Removed old fetch logic since we are using native form submit to Zoho
+            
             changePage('home');
         });
     </script>
