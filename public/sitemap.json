@@ -1,0 +1,10 @@
+﻿{
+  "website": "Sonnies Technology LLC",
+  "navigation": [
+    {"id": "home", "path": "/"},
+    {"id": "about", "path": "/about"},
+    {"id": "services", "path": "/services"},
+    {"id": "jobs", "path": "/jobs"},
+    {"id": "contact", "path": "/contact"}
+  ]
+}
