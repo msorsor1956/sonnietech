@@ -19,10 +19,25 @@ app.post('/api/send-email', async (req, res) => {
     const { name, email, subject, message } = req.body;
 
     const emailData = {
-        "from": { "address": "noreply@sonnietech.com", "name": "Sonnies Tech Team" },
-        "to": [{ "email_address": { "address": "techsolutions@sonnietech.com", "name": "SONNIE TECHNOLOGY LLC" } }],
-        "reply_to": [{ "address": email, "name": name }],
-        "subject": "New Inquiry: " + subject,
+        "from": { 
+            "address": "noreply@sonnietech.com", 
+            "name": "Sonnies Tech Team" 
+        },
+        "to": [
+            { 
+                "email_address": { 
+                    "address": "techsolutions@sonnietech.com", 
+                    "name": "SONNIE TECHNOLOGY LLC" 
+                } 
+            }
+        ],
+        "reply_to": [
+            { 
+                "address": email, 
+                "name": name 
+            }
+        ],
+        "subject": "New Website Inquiry: " + subject,
         "htmlbody": "<div><h3>New Message</h3><p><strong>Name:</strong> " + name + "</p><p><strong>Email:</strong> " + email + "</p><p><strong>Message:</strong><br>" + message + "</p></div>"
     };
 
