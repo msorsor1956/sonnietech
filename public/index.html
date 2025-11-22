@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <meta name="description" content="Sonnies Technology LLC offers expert IT repair services, electronics sales, and reliable medical equipment delivery with a modern touch.">
     <link rel="icon" href="https://i.imghippo.com/files/ZfQ9946Qkw.png" type="image/png">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Updated for Modern/Tech Feel) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
@@ -38,6 +38,7 @@
         /* === GLOBAL PREMIUM STYLES === */
         body {
             background-color: #050b14;
+            /* Subtle texture overlay */
             background-image: 
                 radial-gradient(at 0% 0%, rgba(0, 115, 94, 0.15) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.1) 0px, transparent 50%);
@@ -56,7 +57,7 @@
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #00735E; }
 
-        /* FLOATING ORBS ANIMATION */
+        /* FLOATING ORBS ANIMATION (Background) */
         .orb {
             position: fixed;
             border-radius: 50%;
@@ -65,9 +66,9 @@
             opacity: 0.4;
             animation: float 20s infinite alternate ease-in-out;
         }
-        .orb-1 { width: 400px; height: 400px; background: #00735E; top: -10%; left: -10%; }
-        .orb-2 { width: 300px; height: 300px; background: #D4AF37; bottom: 10%; right: -5%; animation-delay: -5s; }
-        .orb-3 { width: 250px; height: 250px; background: #00c4a7; top: 40%; left: 40%; opacity: 0.15; animation-delay: -10s; }
+        .orb-1 { width: 400px; height: 400px; background: #00735E; top: -10%; left: -10%; } /* Brand Green */
+        .orb-2 { width: 300px; height: 300px; background: #D4AF37; bottom: 10%; right: -5%; animation-delay: -5s; } /* Brand Gold */
+        .orb-3 { width: 250px; height: 250px; background: #00c4a7; top: 40%; left: 40%; opacity: 0.15; animation-delay: -10s; } /* Accent Cyan */
 
         @keyframes float {
             0% { transform: translate(0, 0) rotate(0deg); }
@@ -89,7 +90,7 @@
             background: rgba(255, 255, 255, 0.06);
             border-color: rgba(255, 255, 255, 0.15);
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px 0 rgba(0, 115, 94, 0.15);
+            box-shadow: 0 15px 40px 0 rgba(0, 115, 94, 0.15); /* Green Glow */
         }
 
         /* PREMIUM BUTTONS */
@@ -178,7 +179,7 @@
                 <div class="relative">
                     <!-- Glow behind logo -->
                     <div class="absolute -inset-1 bg-gradient-to-r from-brand-green to-brand-gold rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                    <img src="https://i.imghippo.com/files/ZfQ9946Qkw.png" alt="Logo" class="h-10 w-auto relative rounded-full bg-black/20">
+                    <img src="https://i.imghippo.com/files/ZfQ9946Qkw.png" alt="Logo" class="h-10 w-auto relative z-10 drop-shadow-2xl">
                 </div>
                 <span class="font-heading font-bold text-xl tracking-tight text-white">SONNIES <span class="text-brand-gold">TECH</span></span>
             </a>
@@ -238,7 +239,7 @@
                 </div>
             </div>
 
-            <!-- Features Grid -->
+            <!-- Features Grid (Glass Cards) -->
             <div class="container mx-auto px-6 mt-16">
                 <div class="grid md:grid-cols-3 gap-6">
                     <!-- Card 1 -->
@@ -315,15 +316,10 @@
                 </div>
 
                 <!-- Booking Calendar (Glass Container) -->
-                <div class="glass-card p-8 max-w-5xl mx-auto border border-brand-gold/20 relative">
-                     <!-- Header as requested -->
-                    <div class="text-center mb-8">
-                         <span class="text-4xl">🗓️</span> 
-                         <h3 class="text-3xl font-bold text-brand-gold inline-block ml-3 align-middle">Book an Appointment</h3>
-                    </div>
+                <div class="glass-card p-8 max-w-5xl mx-auto border border-brand-gold/20">
+                    <h3 class="text-2xl font-bold mb-8 text-center text-brand-gold">📅 Book an Appointment</h3>
                     <div class="w-full h-[600px] bg-white rounded-xl overflow-hidden shadow-2xl">
-                        <!-- Restored Grid View Iframe -->
-                        <iframe src="https://calendar.zoho.com/zc/ui/embed/#calendar=zz0801123063cebb1b61b639e897d2c0f6db3671448c220d4001aa57546a32824a105f371a1034315df832db989c7bde1bd20f8959&mode=pub&timezone=US/Eastern" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+                         <iframe src="https://calendar.zoho.com/eventreqForm/zz0801123063cebb1b61b639e897d2c0f6db3671448c220d4001aa57546a32824a105f371a1034315df832db989c7bde1bd20f8959?theme=2&l=en&tz=US/Eastern" title="Schedule appointment for techsolutions" frameborder="0" scrolling="no" marginwidth="0" border="0px" marginheight="0" width="100%" height="100%" allowtransparency="true" align="center"></iframe>
                     </div>
                 </div>
             </div>
@@ -393,7 +389,7 @@
             </div>
         </section>
 
-        <!-- ================= CONTACT SECTION ================= -->
+        <!-- ================= CONTACT SECTION (Premium) ================= -->
         <section id="contact-page-content" class="page-section">
             <div class="container mx-auto px-6 pt-10">
                 <div class="text-center mb-12">
