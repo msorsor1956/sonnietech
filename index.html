@@ -1,18 +1,13 @@
+$htmlContent = @"
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Sonnies Technology LLC | IT Repair, Electronics & Medical Delivery in Indianapolis</title>
-    <meta name="description" content="Sonnies Technology LLC offers expert IT repair services, electronics sales, and reliable medical equipment delivery in Indianapolis, IN. Your trusted tech partner.">
-    <meta name="keywords" content="IT repair Indianapolis, electronics sales Indiana, medical delivery Indiana, Sonnies Technology, PC repair, network troubleshooting, medical equipment transport">
-    <meta name="author" content="Sonnies Technology LLC">
-
-    <!-- Favicon -->
+    <title>Sonnies Technology LLC | IT Repair, Electronics & Medical Delivery</title>
+    <meta name="description" content="Sonnies Technology LLC offers expert IT repair services, electronics sales, and reliable medical equipment delivery.">
     <link rel="icon" href="https://i.imghippo.com/files/r8984tKw.png" type="image/png">
-
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +15,6 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -29,7 +22,6 @@
                     colors: {
                         'brand-green': '#00735E',
                         'brand-gold': '#D4AF37',
-                        'brand-silver': '#C0C0C0',
                         'brand-dark': '#1a202c',
                     },
                     fontFamily: {
@@ -41,163 +33,213 @@
         }
     </script>
 
-    <!-- Custom Styles (Includes Glassmorphism for Contact Page) -->
     <style>
-        body { font-family: 'Open Sans', sans-serif; }
+        /* BASE STYLES */
+        body { font-family: 'Open Sans', sans-serif; scroll-behavior: smooth; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; letter-spacing: -0.025em; }
         .nav-link.active { color: #D4AF37; font-weight: 700; }
         .page-section { display: none; animation: fadeIn 0.5s ease-in-out; }
         .page-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        html { scroll-behavior: smooth; }
 
-        /* GLASSMORPHISM & ANIMATION FOR CONTACT SECTION */
+        /* =========================================
+           GLASSMORPHIC CONTACT SECTION STYLES 
+           (Scoped to #contact-page to protect other pages)
+           ========================================= */
         #contact-page {
-            position: relative;
-            background: linear-gradient(135deg, #004d40, #002b25); /* Dark Green Gradient */
-            overflow: hidden;
+            background: linear-gradient(135deg, #0b1e33, #08101d);
             color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            padding-bottom: 50px;
         }
 
+        /* FLOATING ORBS */
         .bg-orb {
             position: absolute;
+            width: 320px;
+            height: 320px;
             border-radius: 50%;
-            filter: blur(80px);
+            filter: blur(120px);
             animation: float 9s ease-in-out infinite alternate;
             z-index: 0;
-            opacity: 0.4;
         }
-        #orb1 { width: 300px; height: 300px; background: #D4AF37; top: -50px; left: -50px; } /* Gold */
-        #orb2 { width: 250px; height: 250px; background: #00735E; bottom: -50px; right: -50px; animation-delay: 1.3s; } /* Brand Green */
-        #orb3 { width: 200px; height: 200px; background: #ffffff; top: 40%; left: 40%; animation-delay: 2.5s; opacity: 0.1; }
+        #orb1 { background:#00735E; top:-60px; left:-50px; } /* Brand Green */
+        #orb2 { background:#D4AF37; bottom:-80px; right:-50px; animation-delay:1.3s; } /* Brand Gold */
+        #orb3 { background:#00eaff; top:50%; left:45%; animation-delay:2.5s; opacity: 0.3; }
 
         @keyframes float {
-            from { transform: translateY(0px); }
-            to { transform: translateY(30px); }
+            from { transform: translateY(0px); opacity:0.6; }
+            to   { transform: translateY(45px); opacity:0.95; }
         }
 
-        .glass-panel {
-            backdrop-filter: blur(16px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            z-index: 10;
+        /* GLASS CARDS */
+        .glass-card {
+            backdrop-filter: blur(22px);
+            background: rgba(255,255,255,0.09);
+            border: 1px solid rgba(255,255,255,0.25);
+            box-shadow: 0 8px 35px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            z-index: 2;
             position: relative;
         }
 
-        /* Form Inputs Override for Glass Theme */
-        .glass-input {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+        /* FORM ELEMENTS (Scoped) */
+        #contact-page label {
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 15px;
+            display: block;
             color: white;
         }
-        .glass-input::placeholder { color: rgba(255,255,255,0.7); }
-        .glass-input:focus {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: #D4AF37;
+        #contact-page input, #contact-page textarea {
+            width: 100%;
+            padding: 16px;
+            margin-top: 10px;
+            border-radius: 14px;
+            border: none;
             outline: none;
+            font-size: 16px;
+            background: rgba(255,255,255,0.18);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.28);
+            transition: 0.3s;
         }
+        #contact-page input:focus, #contact-page textarea:focus {
+            border-color: #00eaff;
+            box-shadow: 0 0 12px #00eaff;
+        }
+        #contact-page button.glass-submit {
+            width: 100%;
+            padding: 18px;
+            margin-top: 32px;
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            border: none;
+            border-radius: 14px;
+            color: white;
+            cursor: pointer;
+            transition: 0.35s;
+            box-shadow: 0 8px 25px rgba(0,140,255,0.4);
+        }
+        #contact-page button.glass-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,140,255,0.6);
+        }
+
+        /* SUCCESS SCREEN */
+        #successScreen {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(14px);
+            z-index: 999999;
+            text-align: center;
+            padding-top: 20%;
+        }
+        .checkmark { font-size: 115px; color: #00eaff; animation: pop 0.7s ease; }
+        @keyframes pop { from { transform:scale(0); opacity:0; } to { transform:scale(1); opacity:1; } }
+        .progressBar { width: 300px; height: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; margin: 35px auto; overflow: hidden; }
+        .progressFill { width: 0%; height: 100%; background: #00eaff; animation: loading 3s linear forwards; }
+        @keyframes loading { from {width:0%;} to {width:100%;} }
     </style>
 </head>
 <body class="bg-white text-brand-dark">
 
-    <!-- Header -->
+    <!-- MAIN NAVIGATION -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
             <a href="#" class="nav-link focus:outline-none" data-page="home">
-                <img src="https://i.imghippo.com/files/r8984tKw.png" alt="Sonnies Technology LLC Logo" class="h-12 w-auto" onerror="this.alt='Sonnies Technology LLC';">
+                <img src="https://i.imghippo.com/files/r8984tKw.png" alt="Logo" class="h-12 w-auto">
             </a>
-
-            <!-- Desktop Navigation -->
             <div class="hidden md:flex space-x-6">
-                <a href="#" class="nav-link text-gray-700 hover:text-brand-green active" data-page="home">Home</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-brand-green" data-page="home">Home</a>
                 <a href="#" class="nav-link text-gray-700 hover:text-brand-green" data-page="about">About Us</a>
                 <a href="#" class="nav-link text-gray-700 hover:text-brand-green" data-page="services">Services</a>
                 <a href="#" class="nav-link text-gray-700 hover:text-brand-green" data-page="jobs">Jobs</a>
                 <a href="#" class="nav-link text-gray-700 hover:text-brand-green" data-page="contact">Contact Us</a>
             </div>
+            <a href="#" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-5 rounded-lg hover:bg-opacity-90 nav-link" data-page="contact">Get a Quote</a>
             
-            <!-- CTA Button -->
-            <a href="#" class="hidden md:inline-block bg-brand-green text-white font-bold py-2 px-5 rounded-lg hover:bg-opacity-90 transition-colors nav-link" data-page="contact">Get a Quote</a>
-
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none" aria-label="Toggle Navigation Menu">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
         </nav>
-
-        <!-- Mobile Menu Dropdown -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-2 bg-white border-t">
-            <a href="#" class="nav-link block text-gray-700 hover:text-brand-green active" data-page="home">Home</a>
-            <a href="#" class="nav-link block text-gray-700 hover:text-brand-green" data-page="about">About Us</a>
-            <a href="#" class="nav-link block text-gray-700 hover:text-brand-green" data-page="services">Services</a>
-            <a href="#" class="nav-link block text-gray-700 hover:text-brand-green" data-page="jobs">Jobs</a>
-            <a href="#" class="nav-link block text-gray-700 hover:text-brand-green" data-page="contact">Contact Us</a>
+            <a href="#" class="nav-link block text-gray-700" data-page="home">Home</a>
+            <a href="#" class="nav-link block text-gray-700" data-page="about">About</a>
+            <a href="#" class="nav-link block text-gray-700" data-page="services">Services</a>
+            <a href="#" class="nav-link block text-gray-700" data-page="jobs">Jobs</a>
+            <a href="#" class="nav-link block text-gray-700" data-page="contact">Contact</a>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
         <!-- HOME PAGE -->
         <section id="home-page" class="page-section active">
             <div class="bg-brand-green text-white pt-20 pb-28 text-center">
                 <div class="container mx-auto px-6">
                     <h1 class="text-4xl md:text-6xl font-bold mb-4">Technology & Logistics for the Midwest</h1>
-                    <p class="text-xl md:text-2xl text-brand-gold font-heading mb-8">Enriching Lives. Fostering Innovation. Reaching Goals.</p>
-                    <a href="#" class="nav-link bg-brand-gold text-brand-dark font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-colors" data-page="services">Explore Our Services</a>
+                    <p class="text-xl text-brand-gold font-heading mb-8">Enriching Lives. Fostering Innovation.</p>
+                    <a href="#" class="nav-link bg-brand-gold text-brand-dark font-bold py-3 px-8 rounded-lg" data-page="services">Explore Services</a>
                 </div>
             </div>
-
-            <!-- Services Overview -->
-            <div class="py-20 bg-gray-50">
-                <div class="container mx-auto px-6 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-12">Comprehensive Tech & Logistics Solutions</h2>
-                    <div class="grid md:grid-cols-3 gap-10">
-                        <!-- IT Repair -->
-                        <div class="bg-white p-8 rounded-lg shadow-lg">
-                            <svg class="w-16 h-16 text-brand-green mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <h3 class="text-2xl font-bold mb-3">IT Repair Services</h3>
-                            <p class="mb-4">Expert PC, Mac, and network troubleshooting for your home and business. Fast, reliable, and local.</p>
-                            <a href="#" class="nav-link font-bold text-brand-green hover:text-brand-gold" data-page="services">Learn More &rarr;</a>
-                        </div>
-                        <!-- Electronics -->
-                        <div class="bg-white p-8 rounded-lg shadow-lg">
-                            <svg class="w-16 h-16 text-brand-green mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H7a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
-                            <h3 class="text-2xl font-bold mb-3">Electronics Sales</h3>
-                            <p class="mb-4">Retail and wholesale of new and refurbished electronics, gadgets, and essential accessories.</p>
-                            <a href="#" class="nav-link font-bold text-brand-green hover:text-brand-gold" data-page="services">Learn More &rarr;</a>
-                        </div>
-                        <!-- Medical -->
-                        <div class="bg-white p-8 rounded-lg shadow-lg">
-                            <svg class="w-16 h-16 text-brand-green mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10h10m-3-10l5 4v8h5l-5-4V6zM13 16h2m-2-7h2"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 11h6m-3-3v6"></path></svg>
-                            <h3 class="text-2xl font-bold mb-3">Medical Equipment Delivery</h3>
-                            <p class="mb-4">Safe, reliable, and compliant transportation and setup of medical equipment for healthcare facilities.</p>
-                            <a href="#" class="nav-link font-bold text-brand-green hover:text-brand-gold" data-page="services">Learn More &rarr;</a>
-                        </div>
+            <div class="py-20 bg-gray-50 text-center">
+                <h2 class="text-3xl font-bold mb-8">Our Solutions</h2>
+                <div class="grid md:grid-cols-3 gap-10 container mx-auto px-6">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-3 text-brand-green">IT Repair</h3>
+                        <p>Expert PC, Mac, and network troubleshooting.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-3 text-brand-green">Electronics Sales</h3>
+                        <p>Retail and wholesale of new and refurbished gadgets.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-3 text-brand-green">Medical Delivery</h3>
+                        <p>Safe transport of medical equipment.</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Why Choose Us -->
-            <div class="py-20">
-                <div class="container mx-auto px-6">
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <span class="text-brand-gold font-bold uppercase">Why Choose Us</span>
-                            <h2 class="text-3xl md:text-4xl font-bold mb-6 mt-2">Your Trusted Partner in Technology and Logistics</h2>
-                            <p class="text-lg text-gray-700 mb-4">Founded in 2021, Sonnies Technology LLC is built on a foundation of trust, expertise, and a commitment to our community in Indianapolis and across the Midwest.</p>
-                            <ul class="space-y-3 text-lg">
-                                <li class="flex items-center"><svg class="w-6 h-6 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><strong>Professional & Reliable</strong></li>
-                                <li class="flex items-center"><svg class="w-6 h-6 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><strong>Investor-Credible</strong></li>
-                                <li class="flex items-center"><svg class="w-6 h-6 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg><strong>Community-Focused</strong></li>
-                            </ul>
-                        </div>
-                        <div class="rounded-lg shadow-xl overflow-hidden">
-                            <img src="https://placehold.co/600x400/00735E/FFFFFF?text=Sonnies+Tech+Team" alt="Sonnies Technology LLC Team" class="w-full h-full object-cover">
-                        </div>
+        <!-- SERVICES PAGE -->
+        <section id="services-page" class="page-section">
+            <div class="container mx-auto px-6 py-20">
+                <h1 class="text-4xl font-bold text-center mb-10">Our Services & Booking</h1>
+                <!-- Calendar -->
+                <div class="mt-10 bg-white p-4 rounded-lg shadow-lg border-t-4 border-brand-gold">
+                     <h2 class="text-2xl font-bold mb-4 text-center">Book an Appointment</h2>
+                     <div class="w-full h-[600px]">
+                        <iframe src="https://calendar.zoho.com/zc/ui/embed/#calendar=zz0801123063cebb1b61b639e897d2c0f6db3671448c220d4001aa57546a32824a105f371a1034315df832db989c7bde1bd20f8959&mode=pub&timezone=US/Eastern" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOBS PAGE -->
+        <section id="jobs-page" class="page-section py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold mb-10">Jobs & Opportunities</h1>
+                <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-xl border-t-4 border-brand-gold">
+                        <h2 class="text-2xl font-bold mb-4">Independent Driver</h2>
+                        <p>Reliable contractors for medical delivery. <br><strong>Competitive Pay. Local Routes.</strong></p>
+                        <a href="#" class="nav-link block mt-4 text-brand-green font-bold" data-page="contact">Apply Now</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-xl border-t-4 border-brand-green">
+                        <h2 class="text-2xl font-bold mb-4">IT Professional</h2>
+                        <p>Freelance technicians for hardware repair. <br><strong>Project Based. Flexible.</strong></p>
+                        <a href="#" class="nav-link block mt-4 text-brand-gold font-bold" data-page="contact">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -205,269 +247,90 @@
 
         <!-- ABOUT PAGE -->
         <section id="about-page" class="page-section py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h1 class="text-4xl md:text-5xl font-bold">About Sonnies Technology LLC</h1>
-                    <p class="text-xl text-gray-700 mt-4">Your partner in technology and logistics, founded on trust and driven by innovation.</p>
-                </div>
-                <!-- Mission/Vision -->
-                <div class="grid md:grid-cols-2 gap-10 mt-16">
-                    <div class="bg-brand-green text-white p-8 rounded-lg shadow-lg">
-                        <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
-                        <p class="text-lg" id="mission-statement">“To leverage the power of technology to enrich lives, foster innovation, and enable customers to reach their goals effectively.”</p>
-                    </div>
-                    <div class="bg-brand-gold text-brand-dark p-8 rounded-lg shadow-lg">
-                        <h2 class="text-3xl font-bold mb-4">Our Vision</h2>
-                        <p class="text-lg">“To be a trusted leader in IT services, electronics, and healthcare delivery technology across the Midwest.”</p>
-                    </div>
-                </div>
-                <!-- AI Mission Alignment -->
-                <div class="bg-gray-100 p-8 rounded-lg border border-brand-silver mt-16">
-                    <h2 class="text-3xl font-bold mb-4 flex items-center space-x-2 text-brand-green"><span>✨ AI Mission Alignment</span></h2>
-                    <p class="text-gray-700 mb-4">Enter your goal, and see how we support you.</p>
-                    <textarea id="alignment-input" rows="2" placeholder="Enter your goal here..." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm"></textarea>
-                    <button type="button" id="align-mission-button" class="mt-4 bg-brand-green text-white font-bold py-2 px-6 rounded-lg hover:bg-opacity-90">Analyze My Goal</button>
-                    <div id="alignment-response-area" class="mt-4 hidden p-4 bg-white rounded-lg border border-gray-300">
-                        <p id="alignment-response-text" class="text-gray-700 text-sm"></p>
-                        <div id="alignment-loading-indicator" class="hidden text-brand-green flex items-center space-x-2">
-                            <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-brand-green"></div><span>Analyzing...</span>
-                        </div>
-                    </div>
+             <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold">About Us</h1>
+                <p class="mt-4 text-lg">Your trusted partner in technology and logistics.</p>
+                <div class="mt-10 bg-brand-green text-white p-8 rounded-lg">
+                    <h2 class="text-2xl font-bold">Our Mission</h2>
+                    <p class="italic">"To leverage the power of technology to enrich lives..."</p>
                 </div>
             </div>
         </section>
 
-        <!-- SERVICES PAGE -->
-        <section id="services-page" class="page-section py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h1 class="text-4xl md:text-5xl font-bold">Our Services</h1>
-                    <p class="text-xl text-gray-700 mt-4">Specialized solutions to meet your technology and logistics needs.</p>
-                </div>
-
-                <!-- Detailed Services List -->
-                <div class="mt-16 mb-12">
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-green shadow-md hover:shadow-xl transition-shadow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">Installations</h3>
-                            <p class="text-gray-600 text-sm">Professional setup of hardware, networks, and peripherals for homes and businesses.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-gold shadow-md hover:shadow-xl transition-shadow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">Repair & Diagnostics</h3>
-                            <p class="text-gray-600 text-sm">Comprehensive troubleshooting and repair for computers, servers, and networks.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-green shadow-md hover:shadow-xl transition-shadow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">Deinstallation</h3>
-                            <p class="text-gray-600 text-sm">Safe removal and decommissioning of devices, including denomination & payment terminals.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-gold shadow-md hover:shadow-xl transition-shadow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">Website Services</h3>
-                            <p class="text-gray-600 text-sm">Design, development, and maintenance of professional business websites.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-green shadow-md hover:shadow-xl transition-shadow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">Electronics Repair</h3>
-                            <p class="text-gray-600 text-sm">Expert repair for a wide range of consumer and commercial electronics.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-gold shadow-md hover:shadow-xl transition-shadow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">Break & Fix</h3>
-                            <p class="text-gray-600 text-sm">On-demand IT support to fix hardware and software issues as they arise.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-green shadow-md hover:shadow-xl transition-shadow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">POS Systems</h3>
-                            <p class="text-gray-600 text-sm">Installation, configuration, and support for Point of Sale systems.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg border-l-4 border-brand-gold shadow-md hover:shadow-xl transition-shadow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">Medical Logistics</h3>
-                            <p class="text-gray-600 text-sm">Secure delivery and setup of sensitive medical equipment.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI Service Breakdown -->
-                <div class="bg-white p-8 rounded-lg shadow-lg border border-brand-green mt-12">
-                    <h2 class="text-3xl font-bold mb-4 flex items-center space-x-2 text-brand-green"><span>💡 AI Service Breakdown</span></h2>
-                    <p class="text-gray-700 mb-4">Describe your problem, and we'll find the right solution.</p>
-                    <textarea id="breakdown-input" rows="2" placeholder="Describe your issue..." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm"></textarea>
-                    <button type="button" id="breakdown-service-button" class="mt-4 bg-brand-gold text-brand-dark font-bold py-2 px-6 rounded-lg hover:bg-opacity-90">Identify My Service</button>
-                    <div id="breakdown-response-area" class="mt-4 hidden p-4 bg-gray-100 rounded-lg border border-gray-300">
-                        <p id="breakdown-response-text" class="text-gray-700 text-sm"></p>
-                        <div id="breakdown-loading-indicator" class="hidden text-brand-green flex items-center space-x-2">
-                            <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-brand-green"></div><span>Matching solution...</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ZOHO CALENDAR INTEGRATION -->
-                <div class="mt-20 bg-white p-8 rounded-lg shadow-lg border-t-4 border-brand-gold">
-                    <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-brand-dark mb-4">Book a Service Appointment</h2>
-                        <p class="text-gray-600 max-w-2xl mx-auto">Ready to schedule your IT repair, consultation, or equipment delivery? View our availability and book directly through our calendar below.</p>
-                    </div>
-                    <div class="w-full h-[600px] rounded-lg overflow-hidden border border-gray-200">
-                        <iframe src="https://calendar.zoho.com/zc/ui/embed/#calendar=zz0801123063cebb1b61b639e897d2c0f6db3671448c220d4001aa57546a32824a105f371a1034315df832db989c7bde1bd20f8959&mode=pub&timezone=US/Eastern" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- JOBS & SUB-CONTRACTORS PAGE -->
-        <section id="jobs-page" class="page-section py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h1 class="text-4xl md:text-5xl font-bold">Job & Sub-Contractor Opportunities</h1>
-                    <p class="text-xl text-gray-700 mt-4">Join our growing team. We are looking for dedicated professionals for logistics and IT services.</p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                    <!-- Independent Driver Contract -->
-                    <div class="bg-white p-8 rounded-lg shadow-xl border-t-4 border-brand-gold flex flex-col">
-                        <div class="text-brand-green mb-4 flex justify-center">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10h10m-3-10l5 4v8h5l-5-4V6zM13 16h2m-2-7h2"></path></svg>
-                        </div>
-                        <h2 class="text-3xl font-bold mb-4 text-center">Independent Driver Contract</h2>
-                        <p class="text-gray-600 mb-6 text-center">We are seeking reliable independent contractors for medical equipment delivery. Must have a valid license and a clean driving record.</p>
-                        <ul class="text-left text-gray-700 mb-8 space-y-3 px-4 flex-grow">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Flexible Schedule</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Competitive Contract Rates</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Local Routes in Indianapolis</li>
-                        </ul>
-                        <a href="#" class="nav-link bg-brand-green text-white font-bold py-3 px-6 rounded-lg inline-block w-full text-center hover:bg-opacity-90 transition-colors mt-auto" data-page="contact">Contact Us Directly to Apply</a>
-                    </div>
-
-                    <!-- IT Pro Contract -->
-                    <div class="bg-white p-8 rounded-lg shadow-xl border-t-4 border-brand-green flex flex-col">
-                        <div class="text-brand-gold mb-4 flex justify-center">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h2 class="text-3xl font-bold mb-4 text-center">IT Pro Contract</h2>
-                        <p class="text-gray-600 mb-6 text-center">Experienced IT technicians needed for freelance and contract-based hardware repair, network troubleshooting, and installations.</p>
-                        <ul class="text-left text-gray-700 mb-8 space-y-3 px-4 flex-grow">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-green mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Project-Based Work</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-green mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Hardware & Software Focus</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-brand-green mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Business & Residential Clients</li>
-                        </ul>
-                        <a href="#" class="nav-link bg-brand-gold text-brand-dark font-bold py-3 px-6 rounded-lg inline-block w-full text-center hover:bg-opacity-90 transition-colors mt-auto" data-page="contact">Contact Us Directly to Apply</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- POLICY PAGE -->
-        <section id="policy-page" class="page-section py-20">
-            <div class="container mx-auto px-6 max-w-4xl mx-auto">
-                <div class="text-center">
-                    <h1 class="text-4xl md:text-5xl font-bold">Company Policy</h1>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg mt-12">
-                    <h2>1. Privacy Policy</h2>
-                    <p>Sonnies Technology LLC values your privacy...</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT PAGE - REPLACED WITH GLASSMORPHISM DESIGN -->
-        <section id="contact-page" class="page-section py-20" style="background: linear-gradient(135deg, #002b25, #001a17); position: relative; overflow: hidden;">
+        <!-- CONTACT PAGE (PREMIUM GLASSMORPHIC DESIGN) -->
+        <section id="contact-page" class="page-section">
             
-            <!-- Background Animation Orbs -->
-            <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; filter: blur(80px); z-index: 0; background: #D4AF37; top: -50px; left: -50px; opacity: 0.4;"></div>
-            <div style="position: absolute; width: 250px; height: 250px; border-radius: 50%; filter: blur(80px); z-index: 0; background: #00735E; bottom: -50px; right: -50px; opacity: 0.4;"></div>
+            <!-- Floating Orbs -->
+            <div id="orb1" class="bg-orb"></div>
+            <div id="orb2" class="bg-orb"></div>
+            <div id="orb3" class="bg-orb"></div>
 
-            <div class="container mx-auto px-6 relative z-10 text-white">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h1 class="text-4xl md:text-5xl font-bold tracking-wide">Request Support</h1>
-                    <p class="text-xl mt-4 text-gray-300">Get in touch for a quote, service request, or partnership inquiry.</p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-12">
-                    
-                    <!-- GLASSMORPHIC FORM -->
-                    <div style="backdrop-filter: blur(16px); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); padding: 40px; border-radius: 20px;">
-                        <h2 class="text-3xl font-bold mb-6">Send Us a Message</h2>
-                        
-                        <!-- Zoho Form Embed -->
-                        <form action='https://forms.zohopublic.com/techsolutionssonni1/form/PartnershipInquiryForm/formperma/5SgxfTmA7xHuhRLpoeoUX604tNcN6fCUI-UO6v_KzEI/htmlRecords/submit' 
-                              name='form' 
-                              method='POST' 
-                              accept-charset='UTF-8' 
-                              enctype='multipart/form-data'>
-                            
-                            <input type="hidden" name="zf_redirect_url" value="https://msorsor1956.github.io/sonnietech/">
-                            <input type="hidden" name="zf_referrer_name" value="">
-                            <input type="hidden" name="zc_gad" value="">
-
-                            <div class="space-y-4">
-                                <!-- Name Fields -->
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label class="block text-sm font-semibold mb-2">First Name <span class="text-brand-gold">*</span></label>
-                                        <input type="text" name="Name_First" maxlength="255" class="w-full px-4 py-3 rounded-lg border border-transparent bg-white bg-opacity-20 text-white placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:bg-opacity-30 transition" required>
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-semibold mb-2">Last Name <span class="text-brand-gold">*</span></label>
-                                        <input type="text" name="Name_Last" maxlength="255" class="w-full px-4 py-3 rounded-lg border border-transparent bg-white bg-opacity-20 text-white placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:bg-opacity-30 transition" required>
-                                    </div>
-                                </div>
-
-                                <!-- Email Field -->
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Work Email Address <span class="text-brand-gold">*</span></label>
-                                    <input type="text" name="Email" maxlength="255" class="w-full px-4 py-3 rounded-lg border border-transparent bg-white bg-opacity-20 text-white placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:bg-opacity-30 transition" required>
-                                </div>
-
-                                <!-- Company Name -->
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Your Company Name</label>
-                                    <input type="text" name="SingleLine" maxlength="255" class="w-full px-4 py-3 rounded-lg border border-transparent bg-white bg-opacity-20 text-white placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:bg-opacity-30 transition">
-                                </div>
-
-                                <!-- File Upload -->
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">File Upload</label>
-                                    <input type="file" name="FileUpload" class="w-full px-4 py-3 rounded-lg border border-transparent bg-white bg-opacity-20 text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-brand-gold file:text-brand-dark hover:file:bg-opacity-80 transition">
-                                </div>
-
-                                <!-- Proposal/Message -->
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Briefly Describe Your Proposal <span class="text-brand-gold">*</span></label>
-                                    <textarea name="MultiLine" rows="5" maxlength="65535" class="w-full px-4 py-3 rounded-lg border border-transparent bg-white bg-opacity-20 text-white placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:bg-opacity-30 transition" required></textarea>
-                                </div>
-
-                                <!-- Submit Button -->
-                                <button type="submit" class="w-full py-3 px-6 rounded-lg font-bold text-lg text-white bg-gradient-to-r from-brand-green to-green-600 hover:from-green-600 hover:to-brand-green shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">Submit Request</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- Contact Details (Glass Card) -->
-                    <div class="space-y-6">
-                        <div style="backdrop-filter: blur(16px); background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 30px; border-radius: 20px;">
-                            <h2 class="text-3xl font-bold mb-6 text-brand-gold">Contact Information</h2>
-                            <div class="space-y-4 text-lg">
-                                <p><strong class="text-brand-gold">Address:</strong><br> 7022 W 10th St, Indianapolis, IN 46214</p>
-                                <p><strong class="text-brand-gold">Phone:</strong><br> <a href="tel:463-297-9850" class="hover:text-white transition">463-297-9850</a></p>
-                                <p><strong class="text-brand-gold">Email:</strong><br> <a href="mailto:techsolutions@sonnietech.com" class="hover:text-white transition">techsolutions@sonnietech.com</a></p>
-                            </div>
-                        </div>
-
-                        <!-- Map Embed (Rounded Glass) -->
-                        <div style="border-radius: 20px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
-                             <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=7022%20W%2010th%20St,%20Indianapolis,%20IN%2046214&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-                        </div>
-                    </div>
-                </div>
+            <div class="container mx-auto px-6 py-20 relative z-10 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white">Request Support</h1>
+                <p class="text-xl text-gray-300 mt-2">Get in touch for a quote, service request, or partnership.</p>
             </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info Glass Card -->
+                <div class="glass-card p-8 text-white">
+                    <h2 class="text-2xl font-bold mb-6 text-brand-gold">📞 Contact Information</h2>
+                    <div class="space-y-6 text-lg">
+                        <p><strong>Address:</strong><br>7022 W 10th St, Indianapolis, IN 46214</p>
+                        <p><strong>Phone:</strong><br>463-297-9850</p>
+                        <p><strong>Email:</strong><br>info@sonnietech.com</p>
+                    </div>
+                    <div class="mt-8 rounded-xl overflow-hidden shadow-lg">
+                        <iframe width="100%" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps?q=7022%20W%2010th%20St,%20Indianapolis,%20IN%2046214&output=embed"></iframe>
+                    </div>
+                </div>
+
+                <!-- Form Glass Card -->
+                <div class="glass-card p-8" id="formContainer">
+                    <form id="sonnieForm">
+                        <label>Your First Name *</label>
+                        <input type="text" name="Name_First" required>
+
+                        <label>Your Last Name</label>
+                        <input type="text" name="Name_Last">
+
+                        <label>Email Address *</label>
+                        <input type="email" name="Email" required>
+
+                        <label>Your Company Name</label>
+                        <input type="text" name="SingleLine">
+
+                        <label>Upload a File (Optional)</label>
+                        <input type="file" name="FileUpload">
+
+                        <label>Your Message *</label>
+                        <textarea name="MultiLine" required></textarea>
+
+                        <button type="submit" class="glass-submit">Submit Request</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Success Screen Overlay -->
+            <div id="successScreen">
+                <div class="checkmark">✔</div>
+                <h1 style="color:white; font-size: 3rem;">Thank You!</h1>
+                <p style="font-size:20px; opacity:0.8; color: white;">Your request has been submitted.</p>
+                <div class="progressBar"><div class="progressFill"></div></div>
+            </div>
+
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark text-white py-10 text-center">
+    <footer class="bg-brand-dark text-white py-8 text-center relative z-20">
         <div class="container mx-auto px-6">
-            <a href="#" class="nav-link focus:outline-none" data-page="home">
-                <img src="https://i.imghippo.com/files/DPjv7131Xho.png" alt="Sonnies Technology LLC Logo" class="h-10 w-auto mx-auto mb-4">
-            </a>
-            <p class="text-gray-400">&copy; 2021 Sonnies Technology LLC | All Rights Reserved</p>
+            <p>&copy; 2021 Sonnies Technology LLC | All Rights Reserved</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Navigation Logic
@@ -479,31 +342,64 @@
             function changePage(pageId) {
                 pageSections.forEach(section => section.classList.remove('active'));
                 const targetPage = document.getElementById(pageId + '-page');
-                if (targetPage) targetPage.classList.add('active');
-                window.scrollTo(0, 0);
-                mobileMenu.classList.add('hidden');
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    window.scrollTo(0, 0);
+                }
+                if(mobileMenu) mobileMenu.classList.add('hidden');
             }
-            
+
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     if (link.dataset.page) changePage(link.dataset.page);
                 });
             });
-            
+
             if(mobileMenuButton) {
                 mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
             }
-            
+
+            // Default Page
             changePage('home');
+
+            // ZOHO FORM SUBMIT LOGIC
+            const form = document.getElementById("sonnieForm");
+            if (form) {
+                form.addEventListener("submit", async function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(this);
+                    const zohoURL = "https://forms.zohopublic.com/techsolutionssonni1/form/PartnershipInquiryForm/formperma/5SgxfTmA7xHuhRLpoeoUX604tNcN6fCUI-UO6v_KzEI/htmlRecords/submit";
+
+                    try {
+                        await fetch(zohoURL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            body: formData
+                        });
+
+                        // Show Success Animation
+                        document.getElementById("successScreen").style.display = "block";
+
+                        // Redirect after 3 seconds
+                        setTimeout(() => {
+                            window.location.href = "https://msorsor1956.github.io/sonnietech/";
+                        }, 3000);
+
+                    } catch (error) {
+                        console.error(error);
+                        alert("Submission failed. Please check your connection.");
+                    }
+                });
+            }
         });
     </script>
 </body>
 </html>
 "@
-Set-Content -Path "public\index.html" -Value $htmlContent -Encoding UTF8
+Set-Content -Path "index.html" -Value $htmlContent -Encoding UTF8
 
-# 4. Push to GitHub
+# Push to GitHub
 git add .
-git commit -m "feat: Updated Contact page with Premium Glassmorphic Design"
+git commit -m "feat: Integrated Premium Glassmorphic Contact Page"
 git push
