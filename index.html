@@ -181,8 +181,6 @@
                 </div>
                 <span class="font-heading font-bold text-xl tracking-tight text-white">SONNIES <span class="text-brand-gold">TECH</span></span>
             </a>
-
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8">
                 <a href="#" onclick="changePage('home')" class="nav-link text-gray-300 hover:text-white text-sm font-medium tracking-wide transition-colors">HOME</a>
                 <a href="#" onclick="changePage('about')" class="nav-link text-gray-300 hover:text-white text-sm font-medium tracking-wide transition-colors">ABOUT</a>
@@ -190,14 +188,10 @@
                 <a href="#" onclick="changePage('jobs')" class="nav-link text-gray-300 hover:text-white text-sm font-medium tracking-wide transition-colors">CAREERS</a>
                 <a href="#" onclick="changePage('contact')" class="btn-premium px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-lg transform hover:-translate-y-0.5">GET STARTED</a>
             </div>
-
-            <!-- Mobile Button -->
             <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
-
-        <!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#050b14]/95 backdrop-blur-xl border-t border-white/10 absolute w-full shadow-2xl">
             <div class="flex flex-col p-6 gap-4">
                 <a href="#" onclick="changePage('home')" class="text-gray-300 hover:text-brand-gold text-lg font-medium">Home</a>
@@ -209,10 +203,8 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main class="pt-24 pb-20 min-h-screen">
-
-        <!-- ================= HOME SECTION ================= -->
+        <!-- HOME PAGE -->
         <section id="home-page" class="page-section active">
             <div class="container mx-auto px-6 py-20 text-center relative z-10">
                 <div class="inline-block px-4 py-1.5 mb-8 rounded-full border border-brand-gold/30 bg-brand-gold/10 backdrop-blur-md shadow-[0_0_15px_rgba(212,175,55,0.2)] animate-pulse">
@@ -256,7 +248,7 @@
             </div>
         </section>
 
-        <!-- SERVICES PAGE -->
+        <!-- SERVICES SECTION -->
         <section id="services-page" class="page-section">
             <div class="container mx-auto px-6 pt-10">
                 <div class="text-center mb-16">
@@ -274,11 +266,15 @@
                     <div class="glass-card p-6 hover:border-brand-gold/50 cursor-default group"><h3 class="text-lg font-bold text-white mb-2 group-hover:text-brand-gold transition">Medical Delivery</h3><p class="text-gray-400 text-sm">Specialized healthcare transport.</p></div>
                 </div>
 
-                <!-- BOOKING CALENDAR (Updated to Grid View) -->
-                <div class="glass-card p-8 max-w-5xl mx-auto border border-brand-gold/20">
-                    <h3 class="text-2xl font-bold mb-8 text-center text-brand-gold">📅 Book an Appointment</h3>
+                <!-- BOOKING CALENDAR (With "Book an Appointment" Header Style) -->
+                <div class="glass-card p-8 max-w-5xl mx-auto border border-brand-gold/20 relative overflow-hidden">
+                    <div class="text-center mb-8">
+                        <span class="text-4xl">🗓️</span> 
+                        <h3 class="text-3xl font-bold text-brand-gold inline-block ml-3 align-middle">Book an Appointment</h3>
+                    </div>
                     <div class="w-full h-[600px] bg-white rounded-xl overflow-hidden shadow-2xl">
-                         <iframe src="https://calendar.zoho.com/eventreqForm/zz0801123063cebb1b61b639e897d2c0f6db3671448c220d4001aa57546a32824a105f371a1034315df832db989c7bde1bd20f8959?theme=2&l=en&tz=US/Eastern" title="Schedule appointment for techsolutions" frameborder="0" scrolling="no" marginwidth="0" border="0px" marginheight="0" width="100%" height="100%" allowtransparency="true" align="center"></iframe>
+                         <!-- Original Grid View Calendar Link -->
+                         <iframe src="https://calendar.zoho.com/zc/ui/embed/#calendar=zz0801123063cebb1b61b639e897d2c0f6db3671448c220d4001aa57546a32824a105f371a1034315df832db989c7bde1bd20f8959&mode=pub&timezone=US/Eastern" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </div>
             </div>
@@ -290,7 +286,6 @@
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-bold mb-4">Join The Team</h2>
                     <p class="text-center text-gray-400 mb-12">Open opportunities for dedicated professionals.</p>
-
                 <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <div class="glass-card p-10 relative overflow-hidden group border-t-4 border-t-brand-gold">
                         <h3 class="text-3xl font-bold mb-2 text-white">Independent Driver</h3>
